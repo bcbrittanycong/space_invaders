@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 	    
 	    public Player() {
 	    	//player finally shows themselves
-	        ImageIcon ii = new ImageIcon ("/Users/magedmahmoud/Documents/workspace/workspace/Spaceinvaders/spaceship.png","player");
+	        ImageIcon ii = new ImageIcon ("/Users/Tardis/git/space_invaders/Spaceinvaders/spaceship.png","player");
 	        
 	        width = ii.getImage().getWidth(null); 
 	        

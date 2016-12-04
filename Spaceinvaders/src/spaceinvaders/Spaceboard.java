@@ -19,7 +19,8 @@ import javax.swing.JPanel;
 
 public class Spaceboard extends JPanel implements Runnable, Attributes { 
 
-	    private Dimension d;
+	    Image img;
+		private Dimension d;
 	    private ArrayList aliens;   
 	 // private ArrayList walls;
 	    private Player player;
@@ -43,8 +44,10 @@ public class Spaceboard extends JPanel implements Runnable, Attributes {
 	    {
 	        addKeyListener (new TAdapter());
 	        setFocusable(true);
+	        img = Toolkit.getDefaultToolkit().createImage("/Users/Tardis/git/space_invaders/Spaceinvaders/chalkboard-resized.png");   	 	            
+	        //img.getScaledInstance(BOARD_W, BOARD_H, Image.SCALE_DEFAULT);
 	        d = new Dimension(BOARD_W, BOARD_H); 
-	        setBackground(Color.BLACK);
+	        //setBackground(Color.BLACK);
 	        gameInit();
 	        setDoubleBuffered(true);
 	    }
@@ -71,7 +74,7 @@ public class Spaceboard extends JPanel implements Runnable, Attributes {
 	            }
 	            */
 	            
-	            ImageIcon ii= new ImageIcon ("/Users/magedmahmoud/Documents/workspace/workspace/Spaceinvaders/alien.png","Alienship");
+	            ImageIcon ii= new ImageIcon ("/Users/Tardis/git/space_invaders/Spaceinvaders/alien.png","Alienship");
 	            for (int i=0; i < 4; i++) {
 	            	for (int j=0; j < 6; j++) {
 	            		//Spacing for the aliens now done right
@@ -92,7 +95,7 @@ public class Spaceboard extends JPanel implements Runnable, Attributes {
 	                animator.start();
 	            }
 	        }
-
+	        
 	        public void drawAliens (Graphics g)
 	        {
 	            Iterator it = aliens.iterator();
@@ -161,18 +164,20 @@ public class Spaceboard extends JPanel implements Runnable, Attributes {
 	        
 	        public void paint(Graphics g)
 	        {
-	        	Image img;
+	        	//Image img;
 	 	       // Loads the background image and stores in img object.
-	 	       img = Toolkit.getDefaultToolkit().createImage("/Users/magedmahmoud/Documents/workspace/workspace/Spaceinvaders/space1.png");   	 	            
+	 	       //img = Toolkit.getDefaultToolkit().createImage("/Users/Tardis/git/space_invaders/Spaceinvaders/chalkboard.png");   	 	            
 	           super.paint(g);
 	           //g.setColor(Color.black);
 	           //g.fillRect(0, 0, d.width, d.height);
-	           g.drawImage(img, 0, 0, null);
-	           g.setColor(Color.green);   
+	           g.drawImage(img, 0, 0, BOARD_W, BOARD_H, this);
+	           g.setColor(Color.blue);   
+	           
 
 	          if (ingame) {
 	        	
-	            g.drawLine(0, FLOOR, BOARD_W, FLOOR);
+	            
+	        	g.drawLine(0, FLOOR, BOARD_W, FLOOR);
 	            // add a message for lives and aliens remaining.
 	            drawAliens(g);
 	            drawPlayer(g);

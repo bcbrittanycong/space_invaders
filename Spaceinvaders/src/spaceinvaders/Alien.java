@@ -12,7 +12,7 @@ public class Alien extends Sprite {
 
         bomb = new Bomb(x, y);
 
-        ImageIcon ii = new ImageIcon ("/Users/magedmahmoud/Documents/workspace/workspace/Spaceinvaders/alien.png","shot");
+        ImageIcon ii = new ImageIcon ("/Users/Tardis/git/space_invaders/Spaceinvaders/alien.png,shot");
         setImage(ii.getImage());
 
     }

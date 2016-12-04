@@ -4,6 +4,7 @@ public interface Attributes {
 
     public static final int BOARD_W = 700;
     public static final int BOARD_H = 700;
+    //public static final int BOARD_H = 933;
     public static final int FLOOR = 650;
     public static final int BOMB_SIZE = 1;
     public static final int ALIEN_H = 40;
